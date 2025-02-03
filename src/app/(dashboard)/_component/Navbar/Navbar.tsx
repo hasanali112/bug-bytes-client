@@ -4,8 +4,8 @@ import Container from "@/component/shared/Container";
 import Link from "next/link";
 
 const navItem = [
-  { link: "/", label: "Home" },
-  { link: "/", label: "All Post" },
+  { id: 1, link: "/", label: "Home" },
+  { id: 2, link: "/", label: "All Post" },
 ];
 
 const NavbarForDashboard = () => {
@@ -18,7 +18,7 @@ const NavbarForDashboard = () => {
           </div>
           <ul className="flex gap-5">
             {navItem.map((item) => (
-              <li key={item.link}>
+              <li key={item.id}>
                 <Link href={item.link}>{item.label}</Link>
               </li>
             ))}
