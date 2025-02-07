@@ -1,5 +1,11 @@
 "use client";
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+} from "@apollo/client";
 import { HeroUIProvider } from "@heroui/system";
 import {
   ThemeProvider as NextThemesProvider,
@@ -11,6 +17,14 @@ export interface ProvidersProps {
   themeProps?: ThemeProviderProps;
 }
 
+const client = new ApolloClient({
+  link: new HttpLink({
+    uri: "http://localhost:4000",
+    credentials: "include",
+  }),
+  cache: new InMemoryCache(),
+});
+
 const Providers = ({ children, themeProps }: ProvidersProps) => {
   return (
     <HeroUIProvider>
@@ -19,7 +33,7 @@ const Providers = ({ children, themeProps }: ProvidersProps) => {
         attribute="class"
         defaultTheme="system"
       >
-        {children}
+        <ApolloProvider client={client}>{children}</ApolloProvider>
       </NextThemesProvider>
     </HeroUIProvider>
   );

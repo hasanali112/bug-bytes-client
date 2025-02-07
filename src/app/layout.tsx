@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${merriweather.variable} antialiased`}>
+      <body
+        className={`${merriweather.variable} antialiased bg-gradient-to-t from-white/10 via-amber-200/5 to-fuchsia-500/5 min-h-screen`}
+      >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           {children}
         </Providers>
