@@ -22,13 +22,16 @@ export const createPost = async (formData: FormData) => {
 
 export const getAllArticles = async () => {
   try {
-    const res = await fetch("http://localhost:8000/api/v1/article", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "force-cache",
-    });
+    const res = await fetch(
+      "https://tech-ghor-server.vercel.app/api/v1/article",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "force-cache",
+      }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch articles");
     }
@@ -40,13 +43,16 @@ export const getAllArticles = async () => {
 
 export const getSingleArticle = async (id: string) => {
   try {
-    const res = await fetch(`http://localhost:8000/api/v1/article/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "force-cache",
-    });
+    const res = await fetch(
+      `https://tech-ghor-server.vercel.app/api/v1/article/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "force-cache",
+      }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch article");
     }

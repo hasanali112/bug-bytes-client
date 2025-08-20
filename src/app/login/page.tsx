@@ -1,3 +1,4 @@
+"use client";
 import BForm from "@/component/form/BForm";
 import BInput from "@/component/form/BInput";
 import { Button } from "@/components/ui/button";

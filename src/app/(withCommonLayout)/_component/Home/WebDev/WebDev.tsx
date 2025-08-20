@@ -1,6 +1,7 @@
 import { getAllArticles } from "@/services/articleService";
 import { IArticle } from "@/types/article.interface";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const WebDev = async () => {
@@ -18,51 +19,53 @@ const WebDev = async () => {
                   key={post._id}
                   className="flex flex-col sm:flex-row gap-4 p-4 hover:bg-gray-50 rounded-lg transition-colors duration-300 group cursor-pointer"
                 >
-                  {/* Image Container */}
-                  <div className="relative flex-shrink-0 w-full sm:w-48 h-48 sm:h-32 overflow-hidden rounded-lg">
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      width={500}
-                      height={300}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col justify-between">
-                    {/* Category */}
-                    <div className="mb-2">
-                      <span className="text-pink-500 text-sm font-bold uppercase tracking-wider">
-                        {post.category}
-                      </span>
+                  <Link href={`/${post._id}`}>
+                    {/* Image Container */}
+                    <div className="relative flex-shrink-0 w-full sm:w-48 h-48 sm:h-32 overflow-hidden rounded-lg">
+                      <Image
+                        src={post.imageUrl}
+                        alt={post.title}
+                        width={500}
+                        height={300}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-pink-600 transition-colors duration-300 leading-tight">
-                      {post.title}
-                    </h3>
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      {/* Category */}
+                      <div className="mb-2">
+                        <span className="text-pink-500 text-sm font-bold uppercase tracking-wider">
+                          {post.category}
+                        </span>
+                      </div>
 
-                    {/* Meta Information */}
-                    <div className="flex items-center text-gray-500 text-sm space-x-4">
-                      <span>{post.createdAt}</span>
-                      <div className="flex items-center space-x-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                          />
-                        </svg>
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-pink-600 transition-colors duration-300 leading-tight">
+                        {post.title}
+                      </h3>
+
+                      {/* Meta Information */}
+                      <div className="flex items-center text-gray-500 text-sm space-x-4">
+                        <span>{post.createdAt}</span>
+                        <div className="flex items-center space-x-1">
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </article>
               ))}
             </div>

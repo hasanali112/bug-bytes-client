@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getSingleArticle } from "@/services/articleService";
 import React from "react";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import Link from "next/link";
 import "./../../../Style/contentStyle.css";
 import Container from "../_component/Shared/Container";
 
-const BlogDetail = async ({ params }: { params: { id: string } }) => {
+const BlogDetail = async ({ params }: any) => {
   const articleData = await getSingleArticle(params.id);
 
   const article = articleData?.data;
