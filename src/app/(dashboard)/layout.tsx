@@ -1,9 +1,9 @@
-import NavbarForDashboard from "./_component/Navbar/Navbar";
+import Navbar from "../(withCommonLayout)/_component/Navbar/Navbar";
 
 const dashBoardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <NavbarForDashboard />
+      <Navbar />
       {children}
     </div>
   );

@@ -1,0 +1,154 @@
+/* BlogDetail.css */
+.custom-article-content {
+  line-height: 1.7;
+  color: #374151;
+}
+
+.custom-article-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #111827;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.custom-article-content h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.custom-article-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.custom-article-content ul,
+.custom-article-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.custom-article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.custom-article-content li p {
+  margin-bottom: 0.5rem;
+}
+
+.custom-article-content hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.custom-article-content pre {
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.custom-article-content code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono", Consolas,
+    "Courier New", monospace;
+  font-size: 0.875rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.custom-article-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.custom-article-content strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.custom-article-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.custom-article-content a:hover {
+  color: #1d4ed8;
+}
+
+.custom-article-content blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Code syntax highlighting */
+.custom-article-content .keyword {
+  color: #ff79c6;
+}
+
+.custom-article-content .function {
+  color: #50fa7b;
+}
+
+.custom-article-content .string {
+  color: #f1fa8c;
+}
+
+.custom-article-content .comment {
+  color: #6272a4;
+}
+
+.custom-article-content .tag {
+  color: #ff79c6;
+}
+
+.custom-article-content .attribute {
+  color: #50fa7b;
+}
+
+.custom-article-content .value {
+  color: #f1fa8c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-article-content {
+    font-size: 0.95rem;
+  }
+
+  .custom-article-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .custom-article-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .custom-article-content pre {
+    padding: 1rem;
+    border-radius: 0.375rem;
+  }
+
+  .custom-article-content pre code {
+    font-size: 0.8rem;
+  }
+}

@@ -1,17 +1,58 @@
 import type { Metadata } from "next";
-import { Merriweather } from "next/font/google";
+import { Saira_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 import Providers from "@/libs/Providers";
 
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
+const sairaSemiCondensed = Saira_Semi_Condensed({
   weight: ["400", "700"],
   subsets: ["latin"],
+  display: "swap", // Recommended for better performance
 });
 
 export const metadata: Metadata = {
-  title: "Bug Bytes",
-  description: "This is a tech blog site",
+  title:
+    "TechGhor - Your Ultimate Tech Solution Hub | Gadget Reviews & How-To Guides",
+  description:
+    "Get instant tech answers! Smartphone troubleshooting, laptop buying guides, software tutorials, and the latest tech news in Bangladesh. TechGhor solves your tech problems in simple steps.",
+  keywords: [
+    "Bangladesh tech blog",
+    "gadget reviews BD",
+    "tech troubleshooting",
+    "smartphone buying guide",
+    "Bangladesh tech news",
+    "computer tips",
+    "budget gadgets Bangladesh",
+  ],
+  openGraph: {
+    title: "TechGhor - Straight Answers to Your Tech Questions",
+    description:
+      "One-stop solution for all tech queries - device reviews, tutorials, and problem-solving guides for Bangladeshi users",
+    type: "website",
+    url: "https://techghor.com",
+    images: [
+      {
+        url: "https://techghor.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TechGhor - Your Tech Problem Solver",
+      },
+    ],
+    locale: "en_BD",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TechGhor - Your Trusted Tech Guide for Bangladesh",
+    description:
+      "Tech made simple for Bangladeshi users - gadget reviews, buying guides and troubleshooting tips",
+    images: ["https://techghor.com/twitter-card.jpg"],
+    site: "@TechGhor",
+  },
+  alternates: {
+    canonical: "https://techghor.com",
+    languages: {
+      en: "https://techghor.com/en",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -21,12 +62,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${merriweather.variable} antialiased bg-gradient-to-t from-white/10 via-amber-200/5 to-fuchsia-500/5 min-h-screen`}
-      >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {children}
-        </Providers>
+      <body className={sairaSemiCondensed.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

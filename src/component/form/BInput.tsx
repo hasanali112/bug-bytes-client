@@ -1,32 +1,35 @@
 "use client";
 
-import { Input } from "@heroui/input";
-import { useFormContext } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Controller } from "react-hook-form";
 
-interface IInputProps {
+type IInputProps = {
   name: string;
-  size?: "sm" | "md" | "lg";
-  variant?: "flat" | "bordered" | "faded" | "underlined";
-  label: React.ReactNode;
+  placeholder?: string;
+  label: string;
   type?: "text" | "email" | "url" | "password" | "tel" | "search" | "file";
-}
+};
 
-const BInput = ({
-  name,
-  size = "md",
-  variant = "bordered",
-  label,
-  type = "text",
-}: IInputProps) => {
-  const { register } = useFormContext();
+const BInput = ({ name, label, type = "text", placeholder }: IInputProps) => {
   return (
-    <Input
-      type={type}
-      {...register(name)}
-      size={size}
-      variant={variant}
-      label={label}
-      fullWidth={true}
+    <Controller
+      name={name}
+      render={({ field, fieldState: { error } }) => (
+        <div>
+          <Label htmlFor={name}>{label}</Label>
+          <Input
+            {...field} //register, onChange, onBlur etc
+            id={name}
+            type={type}
+            placeholder={placeholder}
+            className={`w-full mt-1 ${
+              error ? "border-red-500 focus:border-red-500" : ""
+            }`}
+          />
+          {error && <p className="text-red-500">{error.message}</p>}
+        </div>
+      )}
     />
   );
 };
